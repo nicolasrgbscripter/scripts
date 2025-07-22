@@ -1,0 +1,190 @@
+writefile("COMPASS.mp3", game:HttpGet("https://github.com/ian49972/smth/raw/refs/heads/main/COMPASS.mp3"))
+
+
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local player = Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+local humanoid = character:WaitForChild("Humanoid")
+
+-- Load NPC model (meshes inside limbs)
+local npcModel = game:GetObjects("rbxassetid://81906373347969")[1]
+
+local function weldPartToLimb(limb, partToWeld, originalParentPart)
+	partToWeld.Anchored = false
+	partToWeld.CanCollide = false
+	partToWeld.Massless = true
+	
+	local relativeCFrame = originalParentPart.CFrame:ToObjectSpace(partToWeld.CFrame)
+	partToWeld.Parent = limb
+	partToWeld.CFrame = limb.CFrame * relativeCFrame
+	
+	local weld = Instance.new("WeldConstraint")
+	weld.Part0 = limb
+	weld.Part1 = partToWeld
+	weld.Parent = partToWeld
+end
+
+for _, npcLimb in pairs(npcModel:GetChildren()) do
+	if npcLimb:IsA("BasePart") then
+		local playerLimb = character:FindFirstChild(npcLimb.Name)
+		if playerLimb then
+			if npcLimb.Name == "Head" then
+				-- Hide NPC Head BasePart completely (block)
+				npcLimb.Transparency = 1
+				npcLimb.CanCollide = false
+				
+				-- Delete player’s original face decal so NPC face meshes show only
+				local playerHead = playerLimb
+				local faceDecal = playerHead:FindFirstChild("face")
+				if faceDecal and faceDecal:IsA("Decal") then
+					faceDecal:Destroy()
+				end
+				
+				-- Weld all NPC Head children except the one named exactly "Head" (the block mesh)
+				for _, child in ipairs(npcLimb:GetChildren()) do
+					if child.Name ~= "Head" then
+						if child:IsA("BasePart") or child:IsA("MeshPart") then
+							local clone = child:Clone()
+							
+							-- Move "Cylinder" mesh (the face) a little forward so it's visible
+							if clone.Name == "Cylinder" then
+								clone.CFrame = clone.CFrame * CFrame.new(0, 0, 0.02)
+							end
+							
+							weldPartToLimb(playerLimb, clone, npcLimb)
+						end
+					end
+				end
+			else
+				-- For other limbs, weld all MeshParts and BaseParts inside NPC limb to player's limb
+				for _, child in ipairs(npcLimb:GetChildren()) do
+					if child:IsA("BasePart") or child:IsA("MeshPart") then
+						local clone = child:Clone()
+						weldPartToLimb(playerLimb, clone, npcLimb)
+					end
+				end
+			end
+		end
+	end
+end
+
+npcModel:Destroy()
+
+-- Hide player's Right Arm BasePart but keep MeshParts visible
+local rightArm = character:FindFirstChild("Right Arm")
+if rightArm then
+	rightArm.Transparency = 1
+	for _, desc in pairs(rightArm:GetChildren()) do
+		if desc:IsA("BasePart") and not desc:IsA("MeshPart") then
+			desc.Transparency = 1
+		end
+	end
+end
+
+-- Continuously enforce transparency on hidden parts
+RunService.Heartbeat:Connect(function()
+	if rightArm then
+		if rightArm.Transparency ~= 1 then
+			rightArm.Transparency = 1
+		end
+		for _, desc in pairs(rightArm:GetChildren()) do
+			if desc:IsA("BasePart") and not desc:IsA("MeshPart") then
+				if desc.Transparency ~= 1 then
+					desc.Transparency = 1
+				end
+			end
+		end
+	end
+end)
+
+-- Load ProudNamed Animator Module
+local success, AnimHandler = pcall(function()
+	return loadstring(game:HttpGet("https://raw.githubusercontent.com/ProudNamed/SuperLightning/refs/heads/main/AnimModule/MainModule"))()
+end)
+if not success then
+	warn("Failed to load Animator module")
+	return
+end
+
+-- Function to load animations via asset ID
+local function loadAnimation(animId)
+	local animObj = game:GetObjects("rbxassetid://" .. tostring(animId))[1]
+	animObj.Parent = character
+	local anim = AnimHandler.new(character, animObj)
+	anim.Looped = true
+	return anim
+end
+
+-- Animation IDs
+local idleAnim = loadAnimation(105880087711722)
+local walkAnim = loadAnimation(81193817424328)
+local runAnim = loadAnimation(132653655520682)
+
+local currentAnim = nil
+local isRunning = false
+local defaultSpeed = 16
+local runSpeed = 28
+humanoid.WalkSpeed = defaultSpeed
+
+local function playAnim(anim)
+	if currentAnim ~= anim then
+		if currentAnim then currentAnim:Stop() end
+		currentAnim = anim
+		currentAnim:Play()
+	end
+end
+
+RunService.RenderStepped:Connect(function()
+	local moving = humanoid.MoveDirection.Magnitude > 0.1
+	if moving then
+		playAnim(isRunning and runAnim or walkAnim)
+	else
+		playAnim(idleAnim)
+	end
+end)
+
+local PlayerGui = player:WaitForChild("PlayerGui")
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "AbilityUI"
+screenGui.ResetOnSpawn = false
+screenGui.Parent = PlayerGui
+
+local runButton = Instance.new("TextButton")
+runButton.Name = "RunButton"
+runButton.Size = UDim2.new(0, 120, 0, 40)
+runButton.Position = UDim2.new(0, 20, 1, -50)
+runButton.BackgroundColor3 = Color3.fromRGB(255, 50, 50)
+runButton.TextColor3 = Color3.new(1, 1, 1)
+runButton.Font = Enum.Font.GothamBold
+runButton.TextSize = 18
+runButton.Text = "Run"
+runButton.Parent = screenGui
+
+runButton.MouseButton1Click:Connect(function()
+	isRunning = not isRunning
+	humanoid.WalkSpeed = isRunning and runSpeed or defaultSpeed
+	runButton.Text = isRunning and "Running..." or "Run"
+	runButton.BackgroundColor3 = isRunning and Color3.fromRGB(0, 255, 0) or Color3.fromRGB(255, 50, 50)
+end)
+
+local sound = Instance.new("Sound")
+sound.Name = "CompassSound"
+sound.SoundId = getcustomasset("COMPASS.mp3")
+sound.Volume = 1
+sound.Looped = true
+sound.Parent = workspace
+sound:Play()
+
+humanoid.Died:Connect(function()
+	if sound then
+		sound:Stop()
+		sound:Destroy()
+	end
+	if currentAnim then
+		currentAnim:Stop()
+	end
+	if screenGui then
+		screenGui:Destroy()
+	end
+end)
