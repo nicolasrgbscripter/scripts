@@ -1,0 +1,41 @@
+--[[
+  Licensed under the MIT License (see LICENSE file for full details).
+  Copyright (c) 2025 MrY7zz
+
+  LEGAL NOTICE:
+  You are REQUIRED to retain this license header under the terms of the MIT License.
+  Removing or modifying this notice may violate copyright law.
+]]
+--// BY MrY7zz
+if not game.IsLoaded then
+	game.Loaded:Wait()
+end
+
+--// Check configdoc.md for settings documentation (CHECK THE DESCRIPTION OF THIS POST)
+
+--// Below are the settings
+-- SETTINGS --
+local settings = _G
+
+settings["Use default animations"] = true
+settings["Fake character transparency level"] = 1
+settings["Disable character scripts"] = true
+settings["Fake character should collide"] = true
+settings["Parent real character to fake character"] = false
+settings["Respawn character"] = true
+settings["Instant respawn"] = false
+settings["Hide HumanoidRootPart"] = false
+settings["PermaDeath fake character"] = true
+settings["R15 Reanimate"] = false
+settings["Click Fling"] = false
+settings["Hide RootPart Distance"] = CFrame.new(255, 255, 0)
+
+settings["Names to exclude from transparency"] = {
+    --[[ example:
+    ["HumanoidRootPart"] = true,
+    ["Left Arm"] = true
+    ]]
+}
+--// Settings end
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/somethingsimade/CurrentAngleV4/refs/heads/main/v4.lua"))()
