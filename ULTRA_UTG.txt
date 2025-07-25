@@ -305,6 +305,7 @@ createButton("Nebula Glitcher V2", "https://raw.githubusercontent.com/nicolasbar
 createButton("Nebula Glitcher V1", "https://raw.githubusercontent.com/nicolasbarbosa323/nebulaglitcher/refs/heads/main/Nebula's%20Star%20Glitcher%20(EDITED%20BY%20FENIX7667%20IMORTAL%20EDIT%20).txt", "1845149698", tabFrames["requires"])
 
 -- Pack 3 (Server Des-)
+createButton("snatch live server", "https://raw.githubusercontent.com/nicolasrgbscripter/scripts/refs/heads/main/snatch", "", tabFrames["guis"])
 createButton("polaria v1", "https://raw.githubusercontent.com/nicolasbarbosa43243/john-doe/refs/heads/main/raw.txt", "", tabFrames["guis"])
 createButton("Polaria v2", "https://pastefy.app/JmaD2ivk/raw", "", tabFrames["guis"])
 createButton("Sypcerr", "https://raw.githubusercontent.com/sypcerr/FECollection/refs/heads/main/script.lua", "", tabFrames["guis"])
