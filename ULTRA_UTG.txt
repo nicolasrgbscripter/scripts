@@ -319,3 +319,4 @@ createButton("ARK-160", "https://raw.githubusercontent.com/Nicolasbarbosa321/mus
 createButton("SB Shotgun", "https://raw.githubusercontent.com/Nicolasbarbosa321/musics/refs/heads/main/SB%20Shotgun.txt", "", tabFrames["guns"])
 createButton("Kitchen Gun", "https://raw.githubusercontent.com/nicolasbarbosa323/rare/refs/heads/main/kitcher%20gun.lua", "88927553987952", tabFrames["guns"])
 createButton("Ak-47", "https://raw.githubusercontent.com/sinret/rbxscript.com-scripts-reuploads-/main/ak47", "", tabFrames["guns"])
+createButton("Limb", "https://raw.githubusercontent.com/nicolasrgbscripter/scripts/refs/heads/main/limb", "", tabFrames["reanimation"])
