@@ -281,7 +281,7 @@ createButton("Vereus", "https://raw.githubusercontent.com/nicolasbarbosa323/xest
 createButton("John Doe", "https://raw.githubusercontent.com/nicolasbarbosa43243/john-doe/refs/heads/main/John_doe_up_by_gojohdkaisenkt%20(2).txt", "", tabFrames["requires"])
 createButton("Good Cop Bad Cop", "https://raw.githubusercontent.com/nicolasbarbosa43243/john-doe/refs/heads/main/KwuminKa.txt", "", tabFrames["Scripts"])
 createButton("Gaster Hands", "https://raw.githubusercontent.com/nicolasbarbosa323/good-cop-bad-coop/refs/heads/main/GasterHands.txt", "1838626744", tabFrames["Scripts"])
-createButton("Funnyfly", "https://raw.githubusercontent.com/nicolasbarbosa323/fix-game/refs/heads/main/funny%20fly", "", tabFrames["Scripts"])
+createButton("Funnyfly", "https://raw.githubusercontent.com/nicolasbarbosa323/fix-game/refs/heads/main/funny%20fly", "", tabFrames["funny"])
 createButton("Fix", "https://raw.githubusercontent.com/nicolasbarbosa323/fix-game/refs/heads/main/fix.lua", "", tabFrames["fix the game"])
 createButton("CrystalDance", "https://raw.githubusercontent.com/nicolasbarbosa43243/john-doe/refs/heads/main/gistfile1%20(1).txt", "", tabFrames["Scripts"])
 createButton("Goner", "https://raw.githubusercontent.com/nicolasbarbosa323/crytasl/refs/heads/main/goner.lua.txt", "1845149698", tabFrames["requires"])
