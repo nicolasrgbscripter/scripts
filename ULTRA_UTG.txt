@@ -94,7 +94,7 @@ local tabFrames = {}
 
 
 
-local tabNames = {"executor", "Scripts", "requires", "guis", "reanimation", "fix the game", "guns"}
+local tabNames = {"executor", "Scripts", "requires", "guis", "reanimation", "fix the game", "guns", "funny"}
 
 for _, name in ipairs(tabNames) do
     local frame = Instance.new("ScrollingFrame")
@@ -272,9 +272,9 @@ createButton("zee hub v6", "https://raw.githubusercontent.com/nicolasbarbosa4324
 createButton("dual RGB sword", "https://raw.githubusercontent.com/nicolasbarbosa43243/john-doe/refs/heads/main/Dual%20Ultima%20RB%20Swords.txt", "78534559289195", tabFrames["Scripts"])
 createButton("Grab Knife V3", "https://raw.githubusercontent.com/nicolasbarbosa43243/john-doe/refs/heads/main/YZnvHFFK.txt", "", tabFrames["requires"])
 createButton("Grab Knife V4", "https://raw.githubusercontent.com/nicolasbarbosa323/grab-knife/refs/heads/main/Grab%20V4.txt", "16190760285", tabFrames["requires"])
-createButton("Metal Pipe", "https://raw.githubusercontent.com/nicolasbarbosa43243/john-doe/refs/heads/main/metal%20pipe.txt", "", tabFrames["Scripts"])
+createButton("Metal Pipe", "https://raw.githubusercontent.com/nicolasbarbosa43243/john-doe/refs/heads/main/metal%20pipe.txt", "", tabFrames["funny"])
 createButton("Xester", "https://raw.githubusercontent.com/nicolasbarbosa323/xester/refs/heads/main/qC7MUFRJ.txt", "16190760285", tabFrames["requires"])
-createButton("Blocks of Death", "https://raw.githubusercontent.com/nicolasbarbosa323/blocs-of-death/refs/heads/main/blocs%20of%20death", "", tabFrames["Scripts"])
+createButton("Blocks of Death", "https://raw.githubusercontent.com/nicolasbarbosa323/blocs-of-death/refs/heads/main/blocs%20of%20death", "", tabFrames["funny"])
 createButton("Sin Dragon", "https://raw.githubusercontent.com/nicolasbarbosa43243/john-doe/refs/heads/main/Sin%20Dragon.txt", "", tabFrames["Scripts"])
 createButton("Revenge Hands", "https://raw.githubusercontent.com/nicolasbarbosa323/sin-dragon/refs/heads/main/reevenge%20hands.txt", "112461424977148", tabFrames["Scripts"])
 createButton("Vereus", "https://raw.githubusercontent.com/nicolasbarbosa323/xester/refs/heads/main/fLrx77PM.txt", "1845149698", tabFrames["Scripts"])
@@ -293,8 +293,8 @@ createButton("THE angel", "https://raw.githubusercontent.com/nicolasbarbosa43243
 createButton("The Sun", "https://raw.githubusercontent.com/nicolasbarbosa323/the-sun/refs/heads/main/the%20sun", "", tabFrames["Scripts"])
 createButton("Killbot", "https://raw.githubusercontent.com/nicolasbarbosa323/rare/refs/heads/main/killbot.lua", "95305396196239", tabFrames["Scripts"])
 createButton("script seacher", "https://rawscripts.net/raw/Universal-Script-Script-Searcher-23625", "", tabFrames["guis"])
-createButton("coca espuma", "https://raw.githubusercontent.com/nicolasbarbosa323/cocacola-espuma/refs/heads/main/coca", "", tabFrames["Scripts"])
-createButton("Steve", "https://raw.githubusercontent.com/nicolasbarbosa323/steve/refs/heads/main/rare.txt", "", tabFrames["Scripts"])
+createButton("coca espuma", "https://raw.githubusercontent.com/nicolasbarbosa323/cocacola-espuma/refs/heads/main/coca", "", tabFrames["funny"])
+createButton("Steve", "https://raw.githubusercontent.com/nicolasbarbosa323/steve/refs/heads/main/rare.txt", "", tabFrames["funny"])
 createButton("פרחים", "https://raw.githubusercontent.com/nicolasbarbosa43243/john-doe/refs/heads/main/Flowers", "", tabFrames["Scripts"])
 createButton("john doe Forsaken", "https://raw.githubusercontent.com/nicolasrgbscripter/scripts/refs/heads/main/comp", "126602437560192", tabFrames["Scripts"])
 
@@ -305,7 +305,7 @@ createButton("Nebula Glitcher V2", "https://raw.githubusercontent.com/nicolasbar
 createButton("Nebula Glitcher V1", "https://raw.githubusercontent.com/nicolasbarbosa323/nebulaglitcher/refs/heads/main/Nebula's%20Star%20Glitcher%20(EDITED%20BY%20FENIX7667%20IMORTAL%20EDIT%20).txt", "1845149698", tabFrames["requires"])
 
 -- Pack 3 (Server Des-)
-createButton("snatch live server", "https://raw.githubusercontent.com/nicolasrgbscripter/scripts/refs/heads/main/snatch", "", tabFrames["guis"])
+createButton("snatch live server", "https://raw.githubusercontent.com/nicolasrgbscripter/scripts/refs/heads/main/snatch", "", tabFrames["funny"])
 createButton("polaria v1", "https://raw.githubusercontent.com/nicolasbarbosa43243/john-doe/refs/heads/main/raw.txt", "", tabFrames["guis"])
 createButton("Polaria v2", "https://pastefy.app/JmaD2ivk/raw", "", tabFrames["guis"])
 createButton("Sypcerr", "https://raw.githubusercontent.com/sypcerr/FECollection/refs/heads/main/script.lua", "", tabFrames["guis"])
