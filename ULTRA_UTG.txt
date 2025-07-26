@@ -294,8 +294,8 @@ createButton("The Sun", "https://raw.githubusercontent.com/nicolasbarbosa323/the
 createButton("Killbot", "https://raw.githubusercontent.com/nicolasbarbosa323/rare/refs/heads/main/killbot.lua", "95305396196239", tabFrames["Scripts"])
 createButton("script seacher", "https://rawscripts.net/raw/Universal-Script-Script-Searcher-23625", "", tabFrames["guis"])
 createButton("coca espuma", "https://raw.githubusercontent.com/nicolasbarbosa323/cocacola-espuma/refs/heads/main/coca", "", tabFrames["funny"])
-createButton("Steve", "https://raw.githubusercontent.com/nicolasbarbosa323/steve/refs/heads/main/rare.txt", "", tabFrames["funny"])
-createButton("פרחים", "https://raw.githubusercontent.com/nicolasbarbosa43243/john-doe/refs/heads/main/Flowers", "", tabFrames["Scripts"])
+createButton("Steve", "raw.githubusercontent.com/nicolasbarbosa323/steve/refs/heads/main/rare.txt", "", tabFrames["funny"])
+createButton("פרחים", "https://raw.githubusercontent.com/nicolasrgbscripter/scripts/refs/heads/main/flowers.lua", "", tabFrames["Scripts"])
 createButton("john doe Forsaken", "https://raw.githubusercontent.com/nicolasrgbscripter/scripts/refs/heads/main/comp", "126602437560192", tabFrames["Scripts"])
 
 -- Pack 2 (Requires)
